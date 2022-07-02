@@ -2,10 +2,12 @@ let express = require("express");
 // let logger = require("morgan");
 
 
+
 let app = express();
 
 app.use((req, res, next) => {
-    console.log(req.url, req.method);
+    let date = new Date();
+    console.log(req.url, req.method, date.toLocaleTimeString());
     next();
 })
 
